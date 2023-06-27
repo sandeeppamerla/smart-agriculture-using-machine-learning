@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container">
+    <div class="carousel-item active">
+        <img class="first-slide" src="/static/home/images/banner.jpg" alt="First slide">
+        <h2 class="lead text-center mt-5" style="padding-top: 25px;">Model Training</h2>
+        <div class="text-center mt-3" style="width:100%; height: 75%;">
+            <form enctype="multipart/form-data" action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="algo">Algorithm</label>
+                    <select class="form-control" name="algo" id="algo">
+                        <option value="0">Choose Algorithms</option>
+                        <option value="1">Decision Tree</option>
+                        <option value="2">XGBOOST</option>
+                        <option value="3">RANDOMFOREST</option>
+                        <option value="4">NAIVE BAYES</option>>
+                        <option value="5">LOGISTIC REGRESSION</option>>
+                        <option value="6">ANN</option>>
+                        <option value="7">svm</option>>
+                        <option value="8">KNN</option>>
+                        <option value="9">LSTM</option>>
+                        <option value="10">BILSTM</option>>
+                        <option value="11">GRU</option>>
+                        <option value="8">CNN</option>>
+
+
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3" style="width:100%; height: 55%;">Submit</button>
+            </form>
+            {% if acc %}
+            <!-- <div id="table" class="table mt-5 text-center" style="overflow: auto;" > -->
+            <p class="lead">
+                The accuracy of {{algo}} : {{acc}}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

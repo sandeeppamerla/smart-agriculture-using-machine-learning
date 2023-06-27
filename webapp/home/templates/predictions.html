@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container p-5" style="padding-top: 95px;"></div> >
+<center><form class="form-horizontal" action="/predictions" id="myform" method="POST">
+  {% csrf_token %}
+
+  <input type="text" name="N" placeholder="N">&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="P" placeholder="P">&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="K" placeholder="K"><br><br>
+
+  <input type="text" name="temperature" placeholder="temperature">&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="humidity" placeholder="humidity">&nbsp&nbsp&nbsp&nbsp
+  <input type="text" name="ph" placeholder="ph"><br><br>
+
+  <input type="text" name="rainfall" placeholder="rainfall">&nbsp&nbsp&nbsp&nbsp
+
+
+
+  <!-- <div class="form-group">
+    <label class="control-label col-sm-2" for="N">N:</label>
+    <div class="">
+      <input type="number" class="form-control" name="N" id="N:" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="P">P:</label>
+    <div class="">
+      <input type="number" class="form-control" name="P" id="P:" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="K">K:</label>
+    <div class="">
+      <input type="number" class="form-control" name="K" id="K:" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="temperature">temperature:</label>
+    <div class="">
+      <input type="number" class="form-control" name="temperature" id="temperature:" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="humidity">humidity:</label>
+    <div class="">
+      <input type="number" class="form-control" name="humidity" id="humidity:" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="ph">ph:</label>
+    <div class="">
+      <input type="number" class="form-control" name="ph" id="ph:" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="rainfall">rainfall:</label>
+    <div class="">
+      <input type="number" class="form-control" name="rainfall" id="rainfall:" required>
+    </div>
+  </div> -->
+
+
+  <div class="form-group">
+    <div class="col-sm-12 text-center">
+      <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form></center>
+<center>
+  <h1 style="color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{msg1}}</h1>
+  </center>
+
+{% if res %}
+<div class="alert alert-success mb-5">
+  <strong>
+    The crop based prediction: {{res}}
+  </strong>
+</div>
+{% endif %}
+</div>
+
+{% endblock %}

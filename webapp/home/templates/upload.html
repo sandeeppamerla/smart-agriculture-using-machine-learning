@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block main %}
+<div class="container" style="-webkit-margin-top-collapse: 20%;">
+    <h4 class="lead text-center mt-5">Upload Dataset</h4>    
+    <div class="text-center mt-3" style="width:100%; height: 75%;">
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            <input type="file" name="file" id="dataset">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% if table %}
+    <div id="table" class="table mt-5 text-center" style="overflow: auto;" >
+        {{table | safe}}
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
