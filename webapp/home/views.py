@@ -171,10 +171,6 @@ def predictions(request):
         msg1 = ('The recommended crop is ', result)
         print(msg1)
 
-        #if result == 0:
-          #  msg1 = 'WHEAT'
-        #else:
-            #msg1 = 'maize'
 
         return render(request, 'predictions.html', {'msg1': msg1})
     return render(request, 'predictions.html')
