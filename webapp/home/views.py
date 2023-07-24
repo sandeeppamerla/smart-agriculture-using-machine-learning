@@ -138,37 +138,7 @@ def train(request):
             msg = 'Accuracy of knn:  ' + str(knn_classifier*100)
             return render(request, 'train.html', {'acc': msg})
 
-        elif model == "9":
-            lr = LogisticRegression(random_state=0)
-            lr.fit(x_train, y_train)
-            y_pred = lr.predict(x_test)
-            clf = accuracy_score(y_test, y_pred)
-            msg = 'Accuracy of LSTM : ' + str(clf*100)
-            return render(request, 'train.html', {'acc': msg})
-
-        elif model == "10":
-            lr = LogisticRegression(random_state=0)
-            lr.fit(x_train, y_train)
-            y_pred = lr.predict(x_test)
-            clf = accuracy_score(y_test, y_pred)
-            msg = 'Accuracy of BILSTM : ' + str(clf*100)
-            return render(request, 'train.html', {'acc': msg})
-
-        elif model == "11":
-            lr = LogisticRegression(random_state=0)
-            lr.fit(x_train, y_train)
-            y_pred = lr.predict(x_test)
-            clf = accuracy_score(y_test, y_pred)
-            msg = 'Accuracy of GRU : ' + str(clf*100)
-            return render(request, 'train.html', {'acc': msg})
-
-        elif model == "12":
-            lr = LogisticRegression(random_state=0)
-            lr.fit(x_train, y_train)
-            y_pred = lr.predict(x_test)
-            clf = accuracy_score(y_test, y_pred)
-            msg = 'Accuracy of CNN : ' + str(clf*100)
-            return render(request, 'train.html', {'acc': msg})
+        
 
 
     return render(request, 'train.html')
